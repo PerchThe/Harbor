@@ -5,6 +5,9 @@
 # Important note regarding Essentials:
 # Please make sure you negate the permission "essentials.sleepingignored" to
 # prevent issues with Harbor and server operators when running Essentials.
+perch-additions:
+  seconds-for-afk: 120
+  DEBUG: false
 
 night-skip:
   enabled: true # Skip the night if a percentage of the players in a world are sleeping

@@ -1,5 +1,7 @@
 package xyz.nkomarn.harbor.util;
 
+import me.jet315.antiafkpro.JetsAntiAFKPro;
+import me.jet315.antiafkpro.manager.AFKPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -74,13 +76,14 @@ public class PlayerManager implements Listener {
      *
      * @return Whether the player is considered AFK.
      */
-    public boolean isAfk(@NotNull Player player) {
-        // If there are no providers registered, we go to the default provider
-        if(oredProviders.isEmpty() && andedProviders.isEmpty()){
-            return defaultProvider.isAFK(player);
+    public boolean isAfk(@NotNull Player player, @NotNull Harbor harbor) {
+        AFKPlayer afkPlayer = JetsAntiAFKPro.getInstance().getAntiAFKProAPI().getAFKPlayer(player);
+        int afkSeconds = afkPlayer.getSecondsAFK();
+        int requiredAfkSeconds = harbor.getConfig().getInt("perch-additions.seconds-for-afk");
+        if(harbor.getConfig().getBoolean("perch-additions.DEBUG")) {
+            harbor.getLogger().info(String.format("AFK Seconds: %s | Required seconds: %s | Player: %s", afkSeconds, requiredAfkSeconds, player.getName()));
         }
-        return oredProviders.stream().anyMatch(provider -> provider.isAFK(player)) ||
-                (!andedProviders.isEmpty() && andedProviders.stream().allMatch(provider -> provider.isAFK(player)));
+        return afkSeconds >= requiredAfkSeconds;
     }
 
     @EventHandler

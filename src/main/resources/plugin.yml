@@ -3,8 +3,10 @@ description: "Harbor redefines how sleep works in your server, making it easier 
 main: "xyz.nkomarn.harbor.Harbor"
 author: "TechToolbox (@nkomarn)"
 website: "https://nkomarn.xyz"
-version: "1.6.4-SNAPSHOT"
+version: "1.6.5-(Perch Custom)"
 api-version: "1.14"
+depend:
+  - JetsAntiAFKPro
 
 softdepend:
   - "Essentials"

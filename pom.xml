@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>xyz.nkomarn</groupId>
     <artifactId>Harbor</artifactId>
-    <version>1.6.4-SNAPSHOT</version>
+    <version>1.6.5-(Perch Custom)</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,12 +14,12 @@
 
     <repositories>
         <repository>
-            <id>spigotmc-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
-            <id>ess-repo</id>
-            <url>https://ci.ender.zone/plugin/repository/everything/</url>
+            <id>essentials-releases</id>
+            <url>https://repo.essentialsx.net/releases/</url>
         </repository>
         <repository>
             <id>placeholderapi</id>
@@ -29,16 +29,22 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>net.ess3</groupId>
+            <groupId>net.essentialsx</groupId>
             <artifactId>EssentialsX</artifactId>
-            <version>2.17.0</version>
+            <version>2.19.0</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bstats</groupId>
+                    <artifactId>bstats-bukkit</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -49,8 +55,15 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.10.9</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.jet315.antiafkpro</groupId>
+            <artifactId>JetsAntiAfkPro</artifactId>
+            <version>3.8.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/JetsAntiAFKPro.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
