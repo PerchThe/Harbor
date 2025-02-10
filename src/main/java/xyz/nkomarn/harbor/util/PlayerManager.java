@@ -78,6 +78,9 @@ public class PlayerManager implements Listener {
      */
     public boolean isAfk(@NotNull Player player, @NotNull Harbor harbor) {
         AFKPlayer afkPlayer = JetsAntiAFKPro.getInstance().getAntiAFKProAPI().getAFKPlayer(player);
+        if(afkPlayer == null) {
+            return false;
+        }
         int afkSeconds = afkPlayer.getSecondsAFK();
         int requiredAfkSeconds = harbor.getConfig().getInt("perch-additions.seconds-for-afk");
         if(harbor.getConfig().getBoolean("perch-additions.DEBUG")) {

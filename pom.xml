@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>xyz.nkomarn</groupId>
     <artifactId>Harbor</artifactId>
-    <version>1.6.5-(Perch Custom)</version>
+    <version>1.6.6-(Perch Custom)</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,7 +63,7 @@
             <artifactId>JetsAntiAfkPro</artifactId>
             <version>3.8.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/JetsAntiAFKPro.jar</systemPath>
+            <systemPath>${project.basedir}/lib/JetsAntiAFKPro-3.8.5.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
