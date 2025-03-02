@@ -59,12 +59,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Gecolay.GSit</groupId>
-            <artifactId>core</artifactId>
-            <version>2.2.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>me.jet315.antiafkpro</groupId>
             <artifactId>JetsAntiAfkPro</artifactId>
             <version>3.8.0</version>
