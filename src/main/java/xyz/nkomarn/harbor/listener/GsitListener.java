@@ -17,15 +17,15 @@ public class GsitListener implements Listener {
         this.checker = checker;
     }
 
-    @EventHandler
-    public void onPlayerPoseChange(PlayerPoseChangeEvent event) {
-        Player player = event.getPlayer();
-        if (event.getPose() == Pose.SLEEPING) {
-            // Player is laying down, treat as sleeping
+@EventHandler
+public void onPlayerPoseChange(PlayerPoseChangeEvent event) {
+    Player player = event.getPlayer();
+    if (event.getPose() == Pose.SLEEPING) {
+        // Check if the player is in a valid world for sleeping
+        if (harbor.getChecker().isValidWorld(player.getWorld())) {
             checker.addSleepingPlayer(player);
-        } else if (event.getPreviousPose() == Pose.SLEEPING) {
-            // Player stopped laying down, treat as waking up
-            checker.removeSleepingPlayer(player);
         }
+    } else if (event.getPreviousPose() == Pose.SLEEPING) {
+        checker.removeSleepingPlayer(player);
     }
 }
