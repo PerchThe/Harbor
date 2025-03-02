@@ -11,7 +11,6 @@ depend:
 softdepend:
   - "Essentials"
   - "PlaceholderAPI"
-  - "GSit"
 
 commands:
   harbor:
