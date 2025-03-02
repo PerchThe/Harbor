@@ -36,12 +36,6 @@ public class Harbor extends JavaPlugin {
         playerManager = new PlayerManager(this);
         essentials = (Essentials) pluginManager.getPlugin("Essentials");
 
-    // Register GSit listener if GSit is enabled
-    if (pluginManager.isPluginEnabled("GSit")) {
-        pluginManager.registerEvents(new GsitListener(this, checker), this);
-        getLogger().info("GSit integration enabled.");
-    }
-
         Arrays.asList(
                 messages,
                 playerManager,
